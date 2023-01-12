@@ -1,5 +1,5 @@
 # set base image
-FROM arm32v7/debian:buster-20201209-slim
+FROM arm64v8/debian:buster-20201209-slim
 
 # install python 3.7 and create alias
 RUN apt-get update -y
@@ -60,3 +60,7 @@ RUN pip3 install git+https://github.com/mk-michal/deep_sort
 
 # install umt
 RUN pip3 install git+https://github.com/nathanrooy/rpi-urban-mobility-tracker --no-deps
+
+# bikestreets custom
+COPY generate_detections.py /usr/local/lib/python3.7/dist-packages /deep_sort_tools/
+CMD umt -camera
