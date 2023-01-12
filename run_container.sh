@@ -1,0 +1,1 @@
+docker run --rm -it --privileged --mount type=bind,src=/home/pi/umt_output,dst=/root umt
