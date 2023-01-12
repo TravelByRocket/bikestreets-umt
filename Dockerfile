@@ -1,5 +1,5 @@
 # set base image
-FROM arm64v8/debian:buster-20201209-slim
+FROM arm32v7/debian:buster-20201209-slim
 
 # install python 3.7 and create alias
 RUN apt-get update -y
