@@ -10,7 +10,7 @@
 1) Insert memory card
 2) Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 	- Select `Raspberry Pi OS (other)`
-	- Select `Raspberry Pi OS Lite (64-bit)`
+	- Select `Raspberry Pi OS Lite (32-bit)`
 	- Make note of hostname
 	- Enable SSH
 	- Set username and passwod
@@ -23,12 +23,17 @@
 	- Add any additional WiFi credentials you may need
 	- Check for updates
 6. `sudo apt-get update && sudo apt-get upgrade`
-7. Install [Docker](https://docs.docker.com/engine/install/)
+7. Install Docker
+	- `curl -fsSL https://get.docker.com -o get-docker.sh`
+	- `sudo sh get-docker.sh`
+	- `rm get-docker.sh`
 8. Add non-root user to Docker user group `sudo usermod -aG docker pi`
 9. Create UMT output directory and move into it `mkdir umt_output && cd umt_output`
 10. Download the Dockerfile `wget https://raw.githubusercontent.com/TravelByRocket/bikestreets-umt/master/Dockerfile`
-11. Build the Docker container `docker build . -t umt`
-12. Start the Docker container: `docker run --rm -it --privileged --mount type=bind,src=${UMT_DIR},dst=/root umt`
+11. Download a replacement Python file `wget https://raw.githubusercontent.com/TravelByRocket/bikestreets-umt/master/generate_detections.py`
+12. Build the Docker container `sudo docker build . -t umt`
+	- Was once unable to get docker daemon but restart got it to work
+13. Start the Docker container: `docker run --rm -it --privileged --mount type=bind,src=/home/pi/umt_output,dst=/root umt`
 
 ## Usage
 Since this code is configured as a cli, everything is accessible via the `umt` command on your terminal. To run while using the Raspberry Pi camera (or laptop camera) data source run the following:
