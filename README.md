@@ -31,9 +31,10 @@
 9. Create UMT output directory and move into it `mkdir umt_output && cd umt_output`
 10. Download the Dockerfile `wget https://raw.githubusercontent.com/TravelByRocket/bikestreets-umt/master/Dockerfile`
 11. Download a replacement Python file `wget https://raw.githubusercontent.com/TravelByRocket/bikestreets-umt/master/generate_detections.py`
-12. Build the Docker container `sudo docker build . -t umt`
-	- Was once unable to get docker daemon but restart got it to work
-13. Start the Docker container: `docker run --rm -it --privileged --mount type=bind,src=/home/pi/umt_output,dst=/root umt`
+12. Build the Docker container `sudo docker build . -t umt` 
+	- or `sh build_container.sh` if script downloaded
+14. Start the Docker container: `docker run --rm -it --privileged --mount type=bind,src=/home/pi/umt_output,dst=/root umt`
+	- or `sh run_container.sh` if script downloaded
 
 ## Usage
 Since this code is configured as a cli, everything is accessible via the `umt` command on your terminal. To run while using the Raspberry Pi camera (or laptop camera) data source run the following:
