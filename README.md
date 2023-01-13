@@ -40,3 +40,14 @@
 	- get container name from `docker ps` or simply type `docker attach ` and press `Tab` button for auto-completion
 	- detach container with `Ctrl-P Ctrl-Q`
 
+## Object Paths File (from macOS)
+
+1. Connect to the same network as the Raspberry Pi
+2. Open terminal and enter `cd Downloads`
+3. Get the file with `scp pi@raspberrypi.local:/home/pi/umt_output/object_paths.csv .` to put it in the current directory (Downloads)
+
+## Notes
+- Change `umt` to use a new filename every time it starts
+- Use `scp` to move over a directory of CSVs or somehow specify a range
+- Can execute commands after/within `ssh` as shown [here](https://stackoverflow.com/questions/26434604/bash-script-execute-commands-after-ssh)
+- Not sure of behavior of `umt` when `object_paths.csv` is deleted while it is running
