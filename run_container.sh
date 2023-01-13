@@ -1,1 +1,1 @@
-docker run --rm -it --privileged --mount type=bind,src=/home/pi/umt_output,dst=/root umt
+docker run --rm -it --privileged --mount type=bind,src=/home/pi/umt_output,dst=/root -d --restart unless-stopped umt
