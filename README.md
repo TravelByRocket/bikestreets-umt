@@ -45,6 +45,7 @@
 1. Connect to the same network as the Raspberry Pi
 2. Open terminal and enter `cd Downloads`
 3. Get all the paths with `scp -r pi@raspberrypi.local:/home/pi/umt_output/object_paths .` to put it in the current directory (Downloads)
+3. Get all the images with `scp -r pi@raspberrypi.local:/home/pi/umt_output/output .` to put it in the current directory (Downloads)
 
 ## Notes
 - Change `umt` to use a new filename every time it starts
@@ -54,4 +55,3 @@
 - Might need to make sure entire card is being utilized
 - `sudo rm -rf output` to delete all images in the `output` directory if you are already in `umt_output` directory
 - `sudo rm -rf object_paths` to delete all CSVs in the `object_paths` directory if you are already in `umt_output` directory
-- 
