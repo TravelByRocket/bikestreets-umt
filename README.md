@@ -44,10 +44,14 @@
 
 1. Connect to the same network as the Raspberry Pi
 2. Open terminal and enter `cd Downloads`
-3. Get the file with `scp pi@raspberrypi.local:/home/pi/umt_output/object_paths.csv .` to put it in the current directory (Downloads)
+3. Get all the paths with `scp -r pi@raspberrypi.local:/home/pi/umt_output/object_paths .` to put it in the current directory (Downloads)
 
 ## Notes
 - Change `umt` to use a new filename every time it starts
 - Use `scp` to move over a directory of CSVs or somehow specify a range
 - Can execute commands after/within `ssh` as shown [here](https://stackoverflow.com/questions/26434604/bash-script-execute-commands-after-ssh)
 - Not sure of behavior of `umt` when `object_paths.csv` is deleted while it is running
+- Might need to make sure entire card is being utilized
+- `sudo rm -rf output` to delete all images in the `output` directory if you are already in `umt_output` directory
+- `sudo rm -rf object_paths` to delete all CSVs in the `object_paths` directory if you are already in `umt_output` directory
+- 
