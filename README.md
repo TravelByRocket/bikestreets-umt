@@ -55,3 +55,4 @@
 - Might need to make sure entire card is being utilized
 - `sudo rm -rf output` to delete all images in the `output` directory if you are already in `umt_output` directory
 - `sudo rm -rf object_paths` to delete all CSVs in the `object_paths` directory if you are already in `umt_output` directory
+- `object_paths` directory must already exist
